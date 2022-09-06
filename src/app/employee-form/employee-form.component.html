@@ -1,0 +1,19 @@
+<div *ngIf="isLoaded">
+  <form #employeeForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-control w-full max-w-xs mx-auto">
+      <label for="name" class="label">Jméno</label>
+      <input name="nameInput" type="text" id="name" class="input input-bordered w-full max-w-xs" required [(ngModel)]="model.name">
+      <label for="surname" class="label">Příjmení</label>
+      <input name="surnameInput" type="text" id="surname" class="input input-bordered w-full max-w-xs" required [(ngModel)]="model.surname">
+
+<!--      <label class="label" for="birthday">Datum narození</label>-->
+<!--      <input class="border-solid" type="date" name="birthdayInput" id="birthday" required [(ngModel)]="model.birthday">-->
+
+      <label class="label" for="position">Pozice</label>
+      <select name="positionSelect" class="select select-bordered w-full max-w-xs" id="position" required [(ngModel)]="model.position">
+        <option *ngFor="let position of positions.positions" [value]="position">{{ position }}</option>
+      </select>
+      <button type="submit" class="btn mt-5" [disabled]="!employeeForm.form.valid">Uložit</button>
+    </div>
+  </form>
+</div>
