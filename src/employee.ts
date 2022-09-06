@@ -4,7 +4,7 @@ export class Employee {
     public name = '',
     public surname = '',
     public position = '',
-    // public birthday: Date
+    public birthday: Date
   ) {  }
-  clone() {return new Employee(this.id, this.name,this.surname, this.position);}
+  clone() {return new Employee(this.id, this.name,this.surname, this.position, this.birthday);}
 }

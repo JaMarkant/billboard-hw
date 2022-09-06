@@ -22,8 +22,8 @@ export class EmployeeService {
     );
   }
 
-  addEmployee(name: string, surname: string, position:string): Observable<Employee> {
-    const newE = {id: 5,name: name,surname:  surname,position: position};
+  addEmployee(name: string, surname: string, position:string, birthday: Date): Observable<Employee> {
+    const newE = {name,surname,position,birthday};
     console.log(newE);
     return this.http.post<Employee>(this.employeesUrl, newE, this.cudOptions).pipe(
       tap((newEmployee: Employee) => console.log(`new id ${newEmployee.id}`)),
