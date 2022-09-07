@@ -1,20 +1,32 @@
-<table class="table mx-auto">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Position</th>
-    <th>Birthday</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let employee of employees ">
-    <td>{{ employee.name }}</td>
-    <td>{{ employee.surname }}</td>
-    <td>{{ employee.position }}</td>
-    <td>{{ employee.birthday | date:'medium' }}</td>
-  </tr>
-  </tbody>
-</table>
-
-<button class="btn" (click)="getEmployees()">asd</button>
+  <div class="h-96 border-solid border-2 mb-2 rounded-xl">
+    <table class="table w-full">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Position</th>
+          <th>Birthday</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover tr-cursor" *ngFor="let employee of employees" (click)="employeeDetail(employee)">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.surname }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.birthday | date:'d/M/y' }}</td>
+          <td>
+            <button class="btn btn-square btn-sm" (click)="deleteEmployee(employee)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                   stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="justify-end">
+    <button class="btn" (click)="addEmployee()">Přidat zaměstnance</button>
+  </div>

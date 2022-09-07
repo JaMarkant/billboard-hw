@@ -1,0 +1,14 @@
+.date-border {
+  border-width: 1px;
+  border-color: hsl(var(--bc)/0.2);
+  border-radius: var(--rounded-btn, 0.5rem);
+
+}
+.date-picker {
+  width: 95%;
+  margin-left:5px;
+  border:none;
+}
+.date-picker:focus {
+  outline: none;
+}

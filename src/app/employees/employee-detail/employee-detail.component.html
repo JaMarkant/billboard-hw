@@ -1,0 +1,36 @@
+<div *ngIf="employee" class="grid place-items-center h-screen">
+  <form [formGroup]="employeeDetailForm" (ngSubmit)="onSubmit()">
+    <div class="grid-cols-2 grid place-items-start grid bg-gray-400 p-12 rounded-xl">
+
+      <div class="p-2"><span class="text-2xl">Jméno: </span></div>
+      <div class="p-2">
+        <span class="text-2xl">{{employee.name}}</span>
+      </div>
+
+      <div class="p-2"><span class="text-2xl">Příjmení: </span></div>
+      <div class="p-2">
+        <input name="surnameInput" type="text" id="surname" formControlName="surname"
+               class="input input-bordered w-full max-w-xs" required>
+      </div>
+
+      <div class="p-2"><span class="text-2xl">Pozice: </span></div>
+      <div class="p-2">
+        <select name="positionSelect" formControlName="position" class="select select-bordered w-full max-w-xs"
+                id="position" required>
+          <option *ngFor="let position of positions.positions" [value]="position">{{ position }}</option>
+        </select>
+      </div>
+
+      <div class="p-2"><span class="text-2xl">Datum narození: </span></div>
+      <div class="p-2"><span class="text-2xl">{{employee.birthday | date: 'd/M/y'}}</span></div>
+
+      <div class="p-2">
+        <a [routerLink]="['/employees']" class="btn btn-sm">Zpět</a>
+      </div>
+      <div class="p-2 place-content-end">
+        <button class="btn btn-sm">Uložit</button>
+      </div>
+    </div>
+  </form>
+</div>
+

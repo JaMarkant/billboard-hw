@@ -1,48 +1,50 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {PositionsService} from "../../shared/positions.service";
 import {Positions} from "../../../positions";
 import {EmployeeService} from "../shared/employee.service";
-import {Employee} from "../shared/employee";
+import { Location } from '@angular/common';
+import {EmployeeFormModel} from "../shared/employee-form-model";
 
 @Component({
   selector: 'app-employee-add-form',
   templateUrl: './employee-add-form.component.html',
-  styleUrls: []
+  styleUrls: ['employee-add-form.component.css']
 })
 export class EmployeeAddFormComponent implements OnInit {
 
   isLoaded: boolean = false;
   positions!: Positions;
-  model!: Employee;
+
+  employeeForm = this.fb.group({
+    name: ['', [Validators.required]],
+    surname: ['', [Validators.required]],
+    position: ['', Validators.required],
+    birthday: [new Date(), Validators.required]
+  })
 
   constructor(
     private positionsService: PositionsService,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private location: Location,
+    private fb: FormBuilder
   ) {
   }
-
   ngOnInit(): void {
     this.positionsService.getPositions()
       .subscribe(positions => {
         this.positions = positions;
         this.isLoaded = true;
       })
-
-    this.model = new Employee(1, '', '', '', new Date());
   }
 
   onSubmit() {
-    this.employeeService.addEmployee(
-      this.model.name,
-      this.model.surname,
-      this.model.position,
-      this.model.birthday
-    ).subscribe(
-      employee => {
-        console.log(employee)
-      }
-    );
+    if(this.employeeForm.valid) {
+      this.employeeService.addEmployee(
+        this.employeeForm.value as EmployeeFormModel
+      ).subscribe();
+    }
+    this.location.back();
   }
 
 }

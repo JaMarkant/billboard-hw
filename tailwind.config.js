@@ -9,7 +9,16 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require(getDaisyUI())],
+  plugins: [
+    require(getDaisyUI()),
+    function ({addComponents}) {
+      addComponents({
+        '.container': {
+          maxWidth: '50%'
+        }
+      })
+    }
+  ],
 };
 function getDaisyUI() {
   return "daisyui";

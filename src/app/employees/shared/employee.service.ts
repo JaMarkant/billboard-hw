@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Employee} from "./employee";
 import {catchError, Observable, of, tap} from "rxjs";
+import {EmployeeFormModel} from "./employee-form-model";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class EmployeeService {
 
   private employeesUrl = 'api/employees';
 
-  private cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+  private httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
   constructor(
     private http: HttpClient
@@ -22,12 +23,19 @@ export class EmployeeService {
     );
   }
 
-  addEmployee(name: string, surname: string, position:string, birthday: Date): Observable<Employee> {
-    const newE = {name,surname,position,birthday};
-    console.log(newE);
-    return this.http.post<Employee>(this.employeesUrl, newE, this.cudOptions).pipe(
+  addEmployee(name: EmployeeFormModel): Observable<Employee> {
+    return this.http.post<Employee>(this.employeesUrl, name, this.httpOptions).pipe(
       tap((newEmployee: Employee) => console.log(`new id ${newEmployee.id}`)),
       catchError(this.handleError<Employee>('addHero'))
+    );
+  }
+
+  deleteEmployee(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/${id}`;
+
+    return this.http.delete<Employee>(url, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted hero id=${id}`)),
+      catchError(this.handleError<Employee>('deleteHero'))
     );
   }
 
@@ -43,5 +51,13 @@ export class EmployeeService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  getEmployee(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/${id}`;
+    return this.http.get<Employee>(url).pipe(
+      tap(_ => console.log(`fetched employee id=${id}`)),
+      catchError(this.handleError<Employee>(`getEmployee id=${id}`))
+    );
   }
 }
