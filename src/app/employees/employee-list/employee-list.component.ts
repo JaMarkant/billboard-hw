@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {Employee} from "../../employee";
-import {EmployeeService} from "../employee.service";
+import {Employee} from "../shared/employee";
+import {EmployeeService} from "../shared/employee.service";
 
 @Component({
-  selector: 'app-employees',
-  templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  selector: 'app-employee-list',
+  templateUrl: './employee-list.component.html',
+  styleUrls: []
 })
-export class EmployeesComponent implements OnInit {
+export class EmployeeListComponent implements OnInit {
 
   employees: Employee[] = [];
 

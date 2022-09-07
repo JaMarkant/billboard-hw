@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {PositionsService} from "../positions.service";
-import {Positions} from "../../positions";
-import {EmployeeService} from "../employee.service";
-import {Employee} from "../../employee";
+import {PositionsService} from "../../shared/positions.service";
+import {Positions} from "../../../positions";
+import {EmployeeService} from "../shared/employee.service";
+import {Employee} from "../shared/employee";
 
 @Component({
-  selector: 'app-employee-form',
-  templateUrl: './employee-form.component.html',
-  styleUrls: ['./employee-form.component.css']
+  selector: 'app-employee-add-form',
+  templateUrl: './employee-add-form.component.html',
+  styleUrls: []
 })
-export class EmployeeFormComponent implements OnInit {
+export class EmployeeAddFormComponent implements OnInit {
 
   isLoaded: boolean = false;
   positions!: Positions;

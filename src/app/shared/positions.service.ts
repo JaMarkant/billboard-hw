@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, Observable} from "rxjs";
-import {Positions} from "../positions";
+import {Positions} from "../../positions";
 
 @Injectable({
   providedIn: 'root'
