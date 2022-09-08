@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {EmployeeService} from "../shared/employee.service";
-import {Employee} from "../shared/employee";
-import {FormBuilder, Validators} from "@angular/forms";
-import {PositionsService} from "../../shared/positions.service";
-import {Positions} from "../../../positions";
-import {Location} from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
+import { EmployeeService } from "../shared/employee.service";
+import { Employee } from "../shared/employee";
+import { FormBuilder, Validators } from "@angular/forms";
+import { PositionsService } from "../../shared/positions.service";
+import { Positions } from "../../shared/positions";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-employee-detail',

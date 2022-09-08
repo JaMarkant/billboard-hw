@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Employee} from "../shared/employee";
-import {EmployeeService} from "../shared/employee.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Employee } from "../shared/employee";
+import { EmployeeService } from "../shared/employee.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-employee-list',

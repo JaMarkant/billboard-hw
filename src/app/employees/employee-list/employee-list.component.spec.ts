@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeListComponent } from './employee-list.component';
+import {HttpClientModule} from "@angular/common/http";
 
-describe('EmployeesComponent', () => {
+describe('EmployeesListComponent', () => {
   let component: EmployeeListComponent;
   let fixture: ComponentFixture<EmployeeListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployeeListComponent ]
+      declarations: [ EmployeeListComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 

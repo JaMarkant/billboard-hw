@@ -1,14 +1,14 @@
-<div *ngIf="employee" class="mt-28 max-w-md mx-auto">
+<div *ngIf="employee" class="mt-28 max-w-lg mx-auto">
   <form [formGroup]="employeeDetailForm" (ngSubmit)="onSubmit()">
     <div class="grid-cols-2 grid border-gray-400 border rounded-xl p-5 p-12 rounded-xl detail">
       <div class="grid-rows-5 grid justify-items-start">
 
-        <div class="p-2"><span class="text-2xl">Jméno: </span></div>
-        <div class="p-2"><span class="text-2xl">Příjmení: </span></div>
-        <div class="p-2"><span class="text-2xl">Pozice: </span></div>
-        <div class="p-2"><span class="text-2xl">Datum narození: </span></div>
+        <div class="p-2"><span class="text-xl" i18n="Detail name@@detailName">Jméno: </span></div>
+        <div class="p-2"><span class="text-xl" i18n="Detail surname@@detailSurname">Příjmení: </span></div>
+        <div class="p-2"><span class="text-xl" i18n="Detail position@@detailPosition">Pozice: </span></div>
+        <div class="p-2"><span class="text-xl" i18n="Detail birthday@@detailBirthday">Datum narození: </span></div>
         <div class="p-2">
-          <a [routerLink]="['/employees']" class="btn btn-sm">Zpět</a>
+          <a [routerLink]="['/employees']" class="btn btn-sm" i18n="Detail back@@detailBack">Zpět</a>
         </div>
       </div>
       <div class="grid-rows-5 grid justify-items-end">
@@ -32,7 +32,7 @@
         <div class="p-2"><span class="text-2xl">{{employee.birthday | date: 'd/M/y'}}</span></div>
 
         <div class="p-2 place-content-end">
-          <button class="btn btn-sm">Uložit</button>
+          <button class="btn btn-sm" i18n="Detail save@@detailSave">Uložit</button>
         </div>
 
       </div>

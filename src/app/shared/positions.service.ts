@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable} from "rxjs";
-import {Positions} from "../../positions";
+import { Observable} from "rxjs";
+import { Positions } from "./positions";
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +16,6 @@ export class PositionsService {
   }
 
   getPositions(): Observable<Positions> {
-    let positions = this.httpClient.get(this.positionsUrl);
-    let asd;
-    positions.subscribe(result => {asd = result, console.log(result)});
-
     return this.httpClient.get<Positions>(this.positionsUrl);
   }
 }

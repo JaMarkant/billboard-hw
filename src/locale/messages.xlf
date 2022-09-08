@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="cs-CZ" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="addEmployeeFormName" datatype="html">
+        <source>Jméno</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-add-form/employee-add-form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Add employee form name</note>
+      </trans-unit>
+      <trans-unit id="addEmployeeFormSurname" datatype="html">
+        <source>Příjmení</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-add-form/employee-add-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Add employee form surname</note>
+      </trans-unit>
+      <trans-unit id="addEmployeeFormBirthday" datatype="html">
+        <source>Datum narození</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-add-form/employee-add-form.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Add employee form birthday</note>
+      </trans-unit>
+      <trans-unit id="addEmployeeFormPosition" datatype="html">
+        <source>Pozice</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-add-form/employee-add-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Add employee form position</note>
+      </trans-unit>
+      <trans-unit id="addEmployeeFormSave" datatype="html">
+        <source>Uložit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-add-form/employee-add-form.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Add employee form save</note>
+      </trans-unit>
+      <trans-unit id="detailName" datatype="html">
+        <source>Jméno: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Detail name</note>
+      </trans-unit>
+      <trans-unit id="detailSurname" datatype="html">
+        <source>Příjmení: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Detail surname</note>
+      </trans-unit>
+      <trans-unit id="detailPosition" datatype="html">
+        <source>Pozice: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Detail position</note>
+      </trans-unit>
+      <trans-unit id="detailBirthday" datatype="html">
+        <source>Datum narození: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Detail birthday</note>
+      </trans-unit>
+      <trans-unit id="detailBack" datatype="html">
+        <source>Zpět</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Detail back</note>
+      </trans-unit>
+      <trans-unit id="detailSave" datatype="html">
+        <source>Uložit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-detail/employee-detail.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Detail save</note>
+      </trans-unit>
+      <trans-unit id="listNameHeader" datatype="html">
+        <source>Jméno</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-list/employee-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">List name</note>
+      </trans-unit>
+      <trans-unit id="listSurnameHeader" datatype="html">
+        <source>Příjmení</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-list/employee-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">List surname</note>
+      </trans-unit>
+      <trans-unit id="listPositionHeader" datatype="html">
+        <source>Pozice</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-list/employee-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">List position</note>
+      </trans-unit>
+      <trans-unit id="listBirthdayHeader" datatype="html">
+        <source>Datum narozní</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-list/employee-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">List birthday</note>
+      </trans-unit>
+      <trans-unit id="listAddButton" datatype="html">
+        <source>Přidat zaměstnance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/employees/employee-list/employee-list.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">List add</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

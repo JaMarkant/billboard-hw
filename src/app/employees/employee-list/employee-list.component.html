@@ -2,10 +2,10 @@
     <table class="table w-full">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Position</th>
-          <th>Birthday</th>
+          <th i18n="List name@@listNameHeader">Jméno</th>
+          <th i18n="List surname@@listSurnameHeader">Příjmení</th>
+          <th i18n="List position@@listPositionHeader">Pozice</th>
+          <th i18n="List birthday@@listBirthdayHeader">Datum narozní</th>
           <th></th>
           <th></th>
         </tr>
@@ -30,5 +30,5 @@
     </table>
   </div>
   <div class="justify-end">
-    <button class="btn" (click)="addEmployee()">Přidat zaměstnance</button>
+    <button class="btn" (click)="addEmployee()" i18n="List add@@listAddButton">Přidat zaměstnance</button>
   </div>

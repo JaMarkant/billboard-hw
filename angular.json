@@ -5,6 +5,12 @@
   "projects": {
     "billboard-hw": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "cs",
+        "locales": {
+          "en-US": "src/locale/messages.en.xlf"
+        }
+      },
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
@@ -13,6 +19,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "cs"
+            ],
             "outputPath": "dist/billboard-hw",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -90,6 +99,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "codeCoverage": true,
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"

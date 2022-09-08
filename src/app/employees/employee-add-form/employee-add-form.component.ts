@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
-import {PositionsService} from "../../shared/positions.service";
-import {Positions} from "../../../positions";
-import {EmployeeService} from "../shared/employee.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { PositionsService } from "../../shared/positions.service";
+import { Positions } from "../../shared/positions";
+import { EmployeeService } from "../shared/employee.service";
 import { Location } from '@angular/common';
-import {EmployeeFormModel} from "../shared/employee-form-model";
+import { EmployeeFormModel } from "../shared/employee-form-model";
 
 @Component({
   selector: 'app-employee-add-form',
