@@ -7,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./data/in-memory-data.service";
 import {EmployeesRoutingModule} from "./employees-routing.module";
-import { EmployeesComponent } from './employees/employees.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
@@ -16,7 +15,6 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
   declarations: [
     EmployeeAddFormComponent,
     EmployeeListComponent,
-    EmployeesComponent,
     EmployeeDetailComponent
   ],
   imports: [
@@ -29,9 +27,6 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
     ),
-  ],
-  exports: [
-    EmployeesComponent
   ]
 })
 export class EmployeesModule { }
