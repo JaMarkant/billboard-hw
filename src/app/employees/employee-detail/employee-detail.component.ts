@@ -5,20 +5,21 @@ import {Employee} from "../shared/employee";
 import {FormBuilder, Validators} from "@angular/forms";
 import {PositionsService} from "../../shared/positions.service";
 import {Positions} from "../../../positions";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-employee-detail',
   templateUrl: './employee-detail.component.html',
-  styleUrls: []
+  styleUrls: ['employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  employee: Employee | undefined;
+  employee?: Employee;
 
   employeeDetailForm = this.fb.group({
-    surname: ['', [Validators.required]],
+    surname: ['', Validators.required],
     position: ['', Validators.required]
-  })
+  });
 
   positions!: Positions;
 
@@ -26,6 +27,7 @@ export class EmployeeDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private employeeService: EmployeeService,
     private fb: FormBuilder,
+    private location: Location,
     private positionsService: PositionsService
     ) { }
 
@@ -55,6 +57,17 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   onSubmit() {
-
+    if (this.employee && this.employeeDetailForm.valid) {
+      let position = this.employeeDetailForm.getRawValue().position;
+      if (position !== null) {
+        this.employee.position = position;
+      }
+      let surname = this.employeeDetailForm.getRawValue().surname;
+      if (surname !== null) {
+        this.employee.surname = surname;
+      }
+      this.employeeService.updateEmployee(this.employee).subscribe();
+      this.location.back();
+    }
   }
 }

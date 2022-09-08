@@ -60,4 +60,11 @@ export class EmployeeService {
       catchError(this.handleError<Employee>(`getEmployee id=${id}`))
     );
   }
+
+  updateEmployee(employee: Employee): Observable<Employee> {
+    return this.http.put<Employee>(this.employeesUrl, employee, this.httpOptions).pipe(
+      tap(_ => console.log(`updated hero id=${employee.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
 }

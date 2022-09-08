@@ -1,20 +1,25 @@
-<div *ngIf="isLoaded">
+<div *ngIf="isLoaded" class="mt-28">
   <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
     <div class="form-control w-full max-w-xs mx-auto">
-      <label for="name" class="label">Jméno</label>
-      <input class="input input-bordered w-full max-w-xs" formControlName="name" id="name" name="nameInput" type="text" required>
-      <label for="surname" class="label">Příjmení</label>
-      <input name="surnameInput" type="text" id="surname" formControlName="surname" class="input input-bordered w-full max-w-xs" required>
+      <div class="border-gray-400 border rounded-xl p-5">
+        <label for="name" class="label">Jméno</label>
+        <input class="input input-bordered w-full max-w-xs" formControlName="name" id="name" name="nameInput"
+               type="text" required>
+        <label for="surname" class="label">Příjmení</label>
+        <input name="surnameInput" type="text" id="surname" formControlName="surname"
+               class="input input-bordered w-full max-w-xs" required>
 
-      <label class="label" for="birthday">Datum narození</label>
-      <div class="date-border">
-      <input class="date-picker" type="date" formControlName="birthday" name="birthdayInput" id="birthday" required>
-</div>
-      <label class="label" for="position">Pozice</label>
-      <select name="positionSelect" formControlName="position" class="select select-bordered w-full max-w-xs" id="position" required>
-        <option *ngFor="let position of positions.positions" [value]="position">{{ position }}</option>
-      </select>
-      <button type="submit" class="btn mt-5" [disabled]="!employeeForm.valid">Uložit</button>
+        <label class="label" for="birthday">Datum narození</label>
+        <div class="date-border">
+          <input class="date-picker" type="date" formControlName="birthday" name="birthdayInput" id="birthday" required>
+        </div>
+        <label class="label" for="position">Pozice</label>
+        <select name="positionSelect" formControlName="position" class="select select-bordered w-full max-w-xs"
+                id="position" required>
+          <option *ngFor="let position of positions.positions" [value]="position">{{ position }}</option>
+        </select>
+        <button type="submit" class="btn mt-5" [disabled]="!employeeForm.valid">Uložit</button>
+      </div>
     </div>
   </form>
 </div>
