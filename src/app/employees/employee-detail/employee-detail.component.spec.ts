@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeDetailComponent } from './employee-detail.component';
-import {HttpClientModule} from "@angular/common/http";
-import {RouterTestingModule} from "@angular/router/testing";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RouterTestingModule } from "@angular/router/testing";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 describe('EmployeeDetailComponent', () => {
   let component: EmployeeDetailComponent;
@@ -12,7 +12,7 @@ describe('EmployeeDetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ EmployeeDetailComponent ],
-      imports: [HttpClientModule, RouterTestingModule, FormsModule, ReactiveFormsModule]
+      imports: [HttpClientTestingModule, RouterTestingModule, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
 

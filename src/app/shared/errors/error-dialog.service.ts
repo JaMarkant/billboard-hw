@@ -6,7 +6,7 @@ import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 export class ErrorDialogService {
   private opened = false;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {}
 
   openDialog(message: string, status?: number): void {
     if (!this.opened) {
